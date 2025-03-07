@@ -23,10 +23,10 @@ public class Program {
         em.getTransaction().commit();
         System.out.println("pronto"); */
 
-
+        em.getTransaction().begin();
         Pessoa p = em.find(Pessoa.class,2);
-        System.out.println(p);
-
+        em.remove(p);
+        em.getTransaction().commit();
 
 
         em.close();
